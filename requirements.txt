@@ -1,0 +1,18 @@
+anthropic
+langgraph
+python-pptx
+pillow
+numpy
+torch
+diffusers
+transformers
+accelerate
+rembg[gpu]        # أو rembg + onnxruntime لو مفيش GPU
+ultralytics       # SAM
+simple-lama-inpainting
+realesrgan
+basicsr
+gfpgan
+edge-tts
+streamlit
+streamlit-image-coordinates
