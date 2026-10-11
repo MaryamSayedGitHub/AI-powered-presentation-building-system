@@ -11,7 +11,7 @@ def _load():
     if device() == "cuda":
         pipe = AutoPipelineForText2Image.from_pretrained(IMAGE_MODEL, torch_dtype=torch.float16, variant="fp16")
         pipe.enable_model_cpu_offload()   # بيحمّل كل جزء على الكارت وقت الحاجة بس (مناسب لـ 8 GB)
-        pipe.enable_vae_tiling()          # بيمنع spike في الذاكرة وقت فك الصورة
+        pipe.vae.enable_tiling()          # بيمنع spike في الذاكرة وقت فك الصورة
     else:
         pipe = AutoPipelineForText2Image.from_pretrained(IMAGE_MODEL)  # CPU: بطيء جداً
     return pipe
